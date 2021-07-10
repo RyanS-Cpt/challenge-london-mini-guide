@@ -20,8 +20,5 @@
 	"dependencies": {
 		"express": "^4.17.1",
 		"heroku": "^7.56.0"
-	},
-	"devDependencies": {
-		"nodemon": "^2.0.9"
 	}
 }
