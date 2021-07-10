@@ -4,7 +4,8 @@
 	"description": "Backend server for full stack app as part of cyf syllabus",
 	"main": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node server.js",
+		"dev": "nodemon server.js"
 	},
 	"repository": {
 		"type": "git",
@@ -17,6 +18,10 @@
 	},
 	"homepage": "https://github.com/RyanS-Cpt/challenge-london-mini-guide#readme",
 	"dependencies": {
-		"express": "*"
+		"express": "^4.17.1",
+		"heroku": "^7.56.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.9"
 	}
 }
