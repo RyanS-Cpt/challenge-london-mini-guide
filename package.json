@@ -1,19 +1,22 @@
 {
-  "name": "cyf-ryanscpt-london-mini-guide",
-  "version": "1.0.0",
-  "description": "Backend server for full stack app as part of cyf syllabus",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RyanS-Cpt/challenge-london-mini-guide.git"
-  },
-  "author": "Ryan Smith",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RyanS-Cpt/challenge-london-mini-guide/issues"
-  },
-  "homepage": "https://github.com/RyanS-Cpt/challenge-london-mini-guide#readme"
+	"name": "cyf-ryanscpt-london-mini-guide",
+	"version": "1.0.0",
+	"description": "Backend server for full stack app as part of cyf syllabus",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RyanS-Cpt/challenge-london-mini-guide.git"
+	},
+	"author": "Ryan Smith",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/RyanS-Cpt/challenge-london-mini-guide/issues"
+	},
+	"homepage": "https://github.com/RyanS-Cpt/challenge-london-mini-guide#readme",
+	"dependencies": {
+		"express": "*"
+	}
 }
