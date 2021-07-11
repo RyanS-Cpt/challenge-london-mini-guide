@@ -8,32 +8,36 @@ app.get("/", (req, res) => {
 	);
 });
 
+console.log("This is here!");
 //Get Pharmacy data
 app.get("/:city/pharmacies", (req, res) => {
 	const { city } = req.params;
-	const cityData = require(`./data/${city}`);
-	// console.log(cityData.pharmacies);
+	const capCity = city.charAt(0).toUpperCase() + city.slice(1);
+	const cityData = require(`./data/${capCity}`);
 	res.json(cityData.pharmacies);
 });
 
 //Get College data
 app.get("/:city/colleges", (req, res) => {
 	const { city } = req.params;
-	const cityData = require(`./data/${city}`);
+	const capCity = city.charAt(0).toUpperCase() + city.slice(1);
+	const cityData = require(`./data/${capCity}`);
 	res.json(cityData.colleges);
 });
 
 //Get Doctor data
 app.get("/:city/doctors", (req, res) => {
 	const { city } = req.params;
-	const cityData = require(`./data/${city}`);
+	const capCity = city.charAt(0).toUpperCase() + city.slice(1);
+	const cityData = require(`./data/${capCity}`);
 	res.json(cityData.doctors);
 });
 
 //Get Hospital data
 app.get("/:city/hospitals", (req, res) => {
 	const { city } = req.params;
-	const cityData = require(`./data/${city}`);
+	const capCity = city.charAt(0).toUpperCase() + city.slice(1);
+	const cityData = require(`./data/${capCity}`);
 	res.json(cityData.hospitals);
 });
 
