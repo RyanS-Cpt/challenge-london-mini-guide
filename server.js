@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 
 const stratfordData = require("./data/Stratford.json");
+const harrowData = require("./data/Harrow.json");
+const heathrowData = require("./data/Heathrow.json");
 
 // console.log(stratfordData);
 
