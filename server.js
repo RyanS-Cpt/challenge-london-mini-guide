@@ -18,7 +18,7 @@ app.get("/:city/:category", (req, res) => {
 		const capCity = city.charAt(0).toUpperCase() + city.slice(1);
 		if (cities.includes(capCity)) {
 			const cityData = require(`./data/${capCity}`);
-			// if (cityData.keys.includes(category)) {
+			// if (cityData.keys.includes(category)) { double check this statement to validate category
 				res.json(cityData[category]);
 			// } else {
 			// 	res
