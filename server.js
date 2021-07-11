@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+const cities = ["Stratford", "Heathrow", "Harrow"];
+
 app.get("/", (req, res) => {
 	res.send(
 		"You made it here, well done! Please select /:city/:category to retrieve data"
@@ -12,12 +14,20 @@ app.get("/", (req, res) => {
 app.get("/:city/:category", (req, res) => {
 	const city = req.params.city;
 	const category = req.params.category;
-	if (city && category){
-	const capCity = city.charAt(0).toUpperCase() + city.slice(1);
-	const cityData = require(`./data/${capCity}`);
-	res.json(cityData[category]);
-	}else{
-		res.status(400).json({msg:`Error no data for ${city} or incorrect ${category} please see root for documentation`});
+	if (city && category) {
+		const capCity = city.charAt(0).toUpperCase() + city.slice(1);
+		if (cities.includes(capCity)) {
+			const cityData = require(`./data/${capCity}`);
+			res.json(cityData[category]);
+		} else {
+			res
+				.status(400)
+				.json({
+					msg: `Error no data for ${city} or incorrect ${category} please see root for documentation`,
+				});
+		}
+	} else {
+		res.status(400).json({ msg: "Error, please input both parameters" });
 	}
 });
 
