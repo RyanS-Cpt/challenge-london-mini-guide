@@ -2,11 +2,11 @@ const express = require("express");
 
 const app = express();
 
-const stratford = require("./data/Stratford.json");
-const harrow = require("./data/Harrow.json");
-const heathrow = require("./data/Heathrow.json");
+// const stratford = require("./data/Stratford.json");
+// const harrow = require("./data/Harrow.json");
+// const heathrow = require("./data/Heathrow.json");
 
-// console.log(stratfordData);
+// const cityData = [stratford, harrow, heathrow];
 
 app.get("/", (req, res) => {
 	res.send(
@@ -17,7 +17,9 @@ app.get("/", (req, res) => {
 //Get Pharmacy data
 app.get("/:city/pharmacies", (req, res) => {
 	const { city } = req.params;
-	res.json(city.pharmacies);
+	const cityData = require(`./data/${city}`)
+	// console.log(cityData.pharmacies);
+	res.json(cityData.pharmacies);
 });
 
 //Get College data
