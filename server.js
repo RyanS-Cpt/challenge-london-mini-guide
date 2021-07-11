@@ -8,7 +8,6 @@ app.get("/", (req, res) => {
 	);
 });
 
-console.log("This is here!");
 //Get Pharmacy data
 app.get("/:city/pharmacies", (req, res) => {
 	const { city } = req.params;
