@@ -18,13 +18,13 @@ app.get("/:city/:category", (req, res) => {
 		const capCity = city.charAt(0).toUpperCase() + city.slice(1);
 		if (cities.includes(capCity)) {
 			const cityData = require(`./data/${capCity}`);
-			// if (cityData.keys.includes(category)) { double check this statement to validate category
+			if (cityData.includes(category)) {
 				res.json(cityData[category]);
-			// } else {
-			// 	res
-			// 		.status(400)
-			// 		.json({ msg: `Error, No such category: ${category} found` });
-			// }
+			} else {
+				res
+					.status(400)
+					.json({ msg: `Error, No such category: ${category} found` });
+			}
 		} else {
 			res.status(400).json({
 				msg: `Error no data for city: ${city} or incorrect category: ${category} please see root for documentation`,
