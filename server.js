@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 const cities = ["Stratford", "Heathrow", "Harrow"];
+const categories = ["pharmacies", "colleges", "doctors", "hospitals"];
 
 app.get("/", (req, res) => {
 	res.send(
@@ -18,7 +19,7 @@ app.get("/:city/:category", (req, res) => {
 		const capCity = city.charAt(0).toUpperCase() + city.slice(1);
 		if (cities.includes(capCity)) {
 			const cityData = require(`./data/${capCity}`);
-			if (cityData.includes(category)) {
+			if (categories.includes(category)) {
 				res.json(cityData[category]);
 			} else {
 				res
